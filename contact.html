@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - My E-Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url("homebackground.jpg") no-repeat center center/cover;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.nav a:hover {
+    background: rgba(255, 215, 255, 0.6);
+    box-shadow: 0 0 8px rgba(255, 185, 255, 0.7);
+}
+
+.nav a.active {
+    background: rgba(255, 180, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 130, 255, 0.8);
+}
+
+section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 1000px;
+    width: 90%;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #764ba2;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.contact-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    word-wrap: break-word;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    min-width: 40px;
+}
+
+/* Colored icons */
+.contact-item.email i { color: #D44638; } /* Gmail Red */
+.contact-item.phone i { color: #34A853; } /* Phone Green */
+.contact-item.location i { color: #FFA500; } /* Orange for location */
+.contact-item.facebook i { color: #1877F2; } /* Facebook Blue */
+.contact-item.instagram i { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.contact-item.messenger i { color: #0084FF; } /* Messenger Blue */
+
+.contact-item div {
+    text-align: left;
+}
+
+.contact-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #764ba2;
+}
+
+.contact-item p {
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0;
+    word-break: break-word;
+}
+
+.contact-item p a {
+    color: #ff4da6;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.form-box {
+    text-align: left;
+    background: #fff0f6;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-box h2 {
+    color: #764ba2;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-box input, .form-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: none;
+}
+
+.form-box button {
+    display: block;
+    width: 100%;
+    background: #ff7eb9;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-box button:hover {
+    background: #ff99c8;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 30px 20px;
+    }
+    .form-box {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="learnings.html">My Learnings</a>
+    <a href="activities.html">My Activities</a>
+    <a href="reflection.html">Reflection</a>
+    <a href="contact.html" class="active">Contact</a>
+</div>
+
+<section>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>You can message me anytime using the details or links below!</p>
+
+        <div class="contact-box">
+            <div class="contact-item email">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:johnceasarcamotapimentel@gmail.com">johnceasarcamotapimentel@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="contact-item phone">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Phone / Mobile</h3>
+                    <p>+63 991 504 9058</p>
+                </div>
+            </div>
+            <div class="contact-item location">
+                <i class="fas fa-location-dot"></i>
+                <div>
+                    <h3>Location</h3>
+                    <p>Mangatarem, Pangasinan</p>
+                </div>
+            </div>
+            <div class="contact-item facebook">
+                <i class="fab fa-facebook"></i>
+                <div>
+                    <h3>Facebook</h3>
+                    <p><a href="https://facebook.com/johnceasar.c.pimentel" target="_blank">facebook.com/johnceasar.c.pimentel</a></p>
+                </div>
+            </div>
+            <div class="contact-item instagram">
+                <i class="fab fa-instagram"></i>
+                <div>
+                    <h3>Instagram</h3>
+                    <p><a href="https://instagram.com/czr.dev_x" target="_blank">@czr.dev_x</a></p>
+                </div>
+            </div>
+            <div class="contact-item messenger">
+                <i class="fab fa-facebook-messenger"></i>
+                <div>
+                    <h3>Messenger</h3>
+                    <p><a href="https://m.me/johnceasar.c.pimentel" target="_blank">m.me/johnceasar.c.pimentel</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-box">
+            <h2>Send Me a Message</h2>
+            <form>
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" required>
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+                <label>Message</label>
+                <textarea rows="5" placeholder="Type your message..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

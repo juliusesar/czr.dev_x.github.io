@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Portfolio in Introduction to Computing (ITEC01)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Body & Background */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url("homebackground.jpg") no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: black;
+        }
+
+        /* Navigation Bar */
+        .nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 12px;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav a:hover {
+            background: rgba(255, 215, 255, 0.6);
+            box-shadow: 0 0 8px rgba(255, 185, 255, 0.7);
+        }
+
+        .nav a.active {
+            background: rgba(255, 180, 255, 0.8);
+            box-shadow: 0 0 10px rgba(255, 130, 255, 0.8);
+        }
+
+        /* Center Section */
+        section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        /* Cute Container Box */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            color: black;
+            width: 75%;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Title */
+        .container h1 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        /* Paragraph */
+        .container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Fade Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.92); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                gap: 8px;
+                padding: 12px;
+            }
+
+            .nav a {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 25px;
+                width: 85%;
+            }
+
+            .container h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="learnings.html">My Learnings</a>
+    <a href="activities.html">My Activities</a>
+    <a href="reflection.html">Reflection</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<section>
+    <div class="container">
+        <h1>Welcome to My E-Portfolio in INTRODUCTION TO COMPUTING (ITEC01)</h1>
+        <p>Explore my journey in IT through dedicated pages. Click on the navigation links above to learn more about me, my learnings, activities, reflections, and how to get in touch!</p>
+    </div>
+</section>
+
+</body>
+</html>

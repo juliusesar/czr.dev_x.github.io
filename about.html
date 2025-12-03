@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me - My E-Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: url("homebackground.jpg") no-repeat center center/cover;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        color: black;
+    }
+
+    .nav {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+        padding: 10px 16px;
+        border-radius: 12px;
+        transition: 0.3s;
+        font-size: 1rem;
+    }
+
+    .nav a:hover {
+        background: rgba(255, 215, 255, 0.6);
+        box-shadow: 0 0 8px rgba(255, 185, 255, 0.7);
+    }
+
+    .nav a.active {
+        background: rgba(255, 180, 255, 0.8);
+        box-shadow: 0 0 10px rgba(255, 130, 255, 0.8);
+    }
+
+    section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 120px;
+        padding-bottom: 50px;
+    }
+
+    /* Show Button */
+    #showButton {
+        background: #ff7eb9;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        transition: transform 0.3s, background 0.3s;
+    }
+
+    #showButton:hover {
+        transform: translateY(-3px) scale(1.05);
+        background: #ff99c8;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+
+    /* Container Box */
+    .container {
+        display: none; /* hidden initially */
+        background: white; /* fully white */
+        padding: 40px 30px;
+        border-radius: 30px;
+        text-align: center;
+        color: black; /* font black */
+        width: 75%;
+        max-width: 800px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        font-size: 1rem;
+        transition: transform 0.3s, opacity 0.5s;
+    }
+
+    .container.show {
+        display: block;
+        opacity: 0;
+        animation: fadeInContainer 0.6s forwards;
+    }
+
+    @keyframes fadeInContainer {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    details img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        margin: 20px auto;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        transition: transform 0.3s;
+    }
+
+    details img:hover {
+        transform: scale(1.05);
+    }
+
+    details h2 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: black;
+    }
+
+    /* Instructor Highlight */
+    .instructor {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+        background: #ff7eb9;
+        padding: 10px 20px;
+        border-radius: 25px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        margin: 15px auto;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .instructor::before {
+        content: "⭐";
+        font-size: 1.2rem;
+    }
+
+    details p {
+        margin: 12px 0;
+        line-height: 1.6;
+        text-align: justify;
+        color: black; /* ensure black font */
+    }
+
+    .highlight {
+        font-weight: 600;
+        color: #764ba2;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 30px 20px;
+            width: 85%;
+        }
+
+        details img {
+            width: 130px;
+            height: 130px;
+        }
+
+        details h2 {
+            font-size: 1.5rem;
+        }
+
+        .instructor {
+            font-size: 1rem;
+            padding: 8px 14px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About Me</a>
+    <a href="learnings.html">My Learnings</a>
+    <a href="activities.html">My Activities</a>
+    <a href="reflection.html">Reflection</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<section>
+    <button id="showButton">Show About Me</button>
+
+    <div class="container" id="aboutContainer">
+        <details open>
+            <summary>About Me</summary>
+            <img src="myphoto.png" alt="Photo of John Ceasar C. Pimentel">
+            <h2>John Ceasar C. Pimentel</h2>
+            <p class="instructor">Instructor: Mrs. Catherine Sales Rosete</p>
+            <p>
+                Hello! I’m <span class="highlight">John Ceasar</span>, a first year student from the Department of Computer Studies, College of Engineering and Technology at Tarlac Agricultural University (TAU).  
+                I am currently taking a Bachelor of Science in Information Technology – Section 1B, and I really enjoy learning about computers, technology, and how different systems work. I like exploring programming, web development, and anything that helps me understand the digital world better. Learning can be confusing sometimes, but I stay patient and curious because every challenge helps me grow.
+                
+                My dream is to become an <span class="highlight">IT Specialist abroad</span> someday. I want to build strong skills so I can solve problems, help people with their tech needs, and work on projects that make life easier and smarter. To reach this goal, I continue studying hard, practicing coding, and improving step by step.
+                
+                I’m also a positive thinker and an active learner. Even though I’m not sporty, I always do my best in school activities, group tasks, and personal projects. I enjoy working with classmates, sharing ideas, and discovering new things because teamwork helps me learn faster.
+                
+                Right now, I’m starting my journey in the IT field. I make mistakes, get confused, and sometimes break things while learning—but fixing them teaches me even more. I believe that learning takes time, and every small improvement is a big step forward.
+                
+                This is my first e-portfolio, and I’m excited to share my progress, skills, and experiences. I hope you’ll see my dedication, my passion for technology, and my determination to reach my goals.
+            </p>
+        </details>
+    </div>
+</section>
+
+<script>
+    const button = document.getElementById('showButton');
+    const container = document.getElementById('aboutContainer');
+
+    button.addEventListener('click', () => {
+        container.classList.add('show');
+        button.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>
